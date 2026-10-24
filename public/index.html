@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FLEX 3D · SUNNY AI V86 - Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-base: #0f172a;
+            --bg-panel: rgba(30, 41, 59, 0.7);
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(12px);
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-base);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header small {
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 8px;
+            font-size: 13px;
+        }
+
+        .wrap {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        .top-bar {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            background: var(--bg-panel);
+            backdrop-filter: var(--glass-blur);
+            padding: 12px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        select, input, textarea {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+
+        option { background: var(--bg-base); }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(167, 139, 250, 0.2));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 { margin: 0 0 10px 0; font-size: 28px; font-weight: 700; }
+        .hero .money { font-size: 42px; font-weight: 800; color: var(--accent); margin: 10px 0; text-shadow: 0 2px 10px rgba(16, 185, 129, 0.3); }
+        .hero .hint { color: var(--text-muted); font-size: 14px; }
+
+        .nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+            scrollbar-width: none;
+        }
+        .nav::-webkit-scrollbar { display: none; }
+
+        .nav button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        .nav button:hover { background: rgba(255, 255, 255, 0.1); color: var(--text-main); }
+        .nav button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .panel {
+            background: var(--bg-panel);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .panel h2 { margin: 0 0 20px 0; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .panel h3 { color: var(--text-muted); font-size: 16px; margin-top: 24px; margin-bottom: 12px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .tile {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            transition: transform 0.2s;
+        }
+
+        .tile:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.2); }
+        .tile small { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .tile strong { font-size: 22px; font-weight: 600; }
+        .tile.kpi strong { font-size: 32px; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        .badge.red { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+        .badge.yellow { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .badge.green { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+        .scroll { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(0, 0, 0, 0.4); padding: 14px 16px; font-weight: 600; font-size: 13px; color: var(--text-muted); position: sticky; top: 0; backdrop-filter: blur(10px); }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255, 255, 255, 0.03); }
+
+        button.primary, button {
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .primary {
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .primary:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
+        
+        button:not(.primary) {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+        button:not(.primary):hover { background: rgba(255, 255, 255, 0.1); }
+
+        td input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid transparent;
+        }
+        td input:hover, td input:focus {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: var(--primary);
+        }
+
+        .notice {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 16px;
+            border-radius: 8px;
+            color: #fcd34d;
+            font-size: 14px;
+            margin: 16px 0;
+        }
+        
+        .notice.danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-left-color: var(--danger);
+            color: #fca5a5;
+        }
+
+        #aiButton {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+        #aiButton:hover { transform: scale(1.05); }
+
+        #aiBox {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 420px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            transform-origin: bottom right;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        #aiBox.open { display: flex; }
+
+        .messages {
+            height: 250px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-main);
+            white-space: pre-wrap;
+            border: 1px solid var(--border);
+        }
+        
+        .flex { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 16px; }
+        .flex label { flex: 1; min-width: 200px; }
+        .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+        
+        .hint { color: var(--text-muted); font-size: 13px; margin: 8px 0; }
+        .mini { font-size: 13px; color: var(--text-muted); }
+        
+        @media(max-width: 768px) {
+            header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .hero .money { font-size: 32px; }
+            .top-bar { flex-direction: column; align-items: stretch; }
+            #aiBox { width: calc(100vw - 40px); right: 20px; bottom: 90px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-cube"></i> FLEX 3D · SUNNY AI <small>V86 Premium</small></h1>
+    </header>
+    
+    <div class="wrap">
+        <section class="top-bar">
+            <label style="flex:2">Tài khoản đang xem
+                <select id="who" style="width:100%"></select>
+            </label>
+            <label style="flex:1">Ngày làm việc
+                <input id="date" type="date" value="2026-10-24" style="width:100%">
+            </label>
+            <label style="flex:1">Kỳ báo cáo
+                <select id="period" style="width:100%">
+                    <option value="day">Ngày</option>
+                    <option value="week">Tuần</option>
+                    <option value="month" selected>Tháng</option>
+                    <option value="quarter">Quý</option>
+                    <option value="year">Năm</option>
+                </select>
+            </label>
+        </section>
+        
+        <div id="hero"></div>
+        
+        <section class="nav" id="nav"></section>
+        
+        <main id="main"></main>
+    </div>
+
+    <button id="aiButton"><i class="fa-solid fa-robot"></i> Hỏi Trợ Lý AI</button>
+    
+    <aside id="aiBox">
+        <div style="font-weight: 600; font-size: 16px;"><i class="fa-solid fa-wand-magic-sparkles" style="color: #10b981;"></i> Trợ lý quản trị Sunny</div>
+        <p class="hint">Trợ lý AI đã kết nối dữ liệu. Thử hỏi: "Lương giám đốc", "KPI của tôi", "Chi phí tháng này".</p>
+        <div id="messages" class="messages">Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</div>
+        <textarea id="question" rows="2" placeholder="Nhập câu hỏi..."></textarea>
+        <button class="primary" id="ask" style="width: 100%;">Gửi câu hỏi</button>
+    </aside>
+
+    <script>
+        // DỮ LIỆU GỐC (Lược gọn để file nhẹ hơn, bạn có thể dán full data vào đây)
+        const D = { 
+            "people": [
+                { "ten": "Giám đốc", "bo_phan": "Điều hành", "id": "NV001", "base": 25000000, "bonus": 8000000, "task": "Điều hành", "days": 26, "worked": 26, "hours": 8, "score": 97, "commissionRate": 0 },
+                { "ten": "Kế toán", "bo_phan": "Tài chính", "id": "NV002", "base": 10000000, "bonus": 2500000, "task": "Kế toán", "days": 26, "worked": 26, "hours": 8, "score": 104, "commissionRate": 0 },
+                { "ten": "Tổ trưởng kiêm KCS", "bo_phan": "Sản xuất", "id": "NV003", "base": 12000000, "bonus": 3500000, "task": "Tổ trưởng", "days": 26, "worked": 26, "hours": 8, "score": 65, "commissionRate": 0 },
+                { "ten": "Công nhân 1", "bo_phan": "Sản xuất", "id": "NV004", "base": 8500000, "bonus": 2000000, "task": "Công nhân", "days": 26, "worked": 26, "hours": 8, "score": 106, "commissionRate": 0 },
+                { "ten": "Kinh doanh 1", "bo_phan": "Kinh doanh", "id": "NV009", "base": 10000000, "bonus": 4000000, "task": "Kinh doanh", "days": 26, "worked": 26, "hours": 8, "score": 93, "commissionRate": 0.005 },
+                { "ten": "CTV 1", "bo_phan": "Cộng tác viên", "id": "NV014", "base": 0, "bonus": 0, "task": "CTV", "days": 26, "worked": 26, "hours": 8, "score": 61, "commissionRate": 0.015 }
+            ], 
+            "orders": [
+                { "id": "DH00001", "khach": "Khách 0032", "gia_tri": 6800000, "paid": 0, "status": "Trả hàng" },
+                { "id": "DH00002", "khach": "Khách 0063", "gia_tri": 20400000, "paid": 20400000, "status": "Đã thu tiền" }
+            ], 
+            "issues": [
+                { "ma": "SC0001", "bo_phan": "Sản xuất", "van_de": "Thiếu biên bản giao ca", "so_tien": 225000, "giai_phap": "Xác minh lại" }
+            ], 
+            "demo": true 
+        };
+
+        const $ = id => document.getElementById(id);
+        const fmt = n => Math.round(Number(n) || 0).toLocaleString('vi-VN') + ' đ';
+        const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const KEY = 'sunny_v86_test_state'; 
+        
+        let state;
+        try { state = JSON.parse(localStorage.getItem(KEY) || 'null') } catch (e) { }
+        if (!state || !state.version) state = { version: 83, customers: [], orders: [], tasks: [], kpis: [], hr: {}, violations: [], costAnalysis: {}, attendance: [] };
+        const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); return true } catch (e) { alert('Không lưu được dữ liệu'); return false } };
+        
+        let current = 0, tab = 'kpi'; 
+        const who = $('who'), date = $('date'); 
+        who.innerHTML = D.people.map((p, i) => `<option value="${i}">${esc(p.id)} · ${esc(p.ten)}</option>`).join('');
+        
+        const p = () => D.people[current];
+        
+        // --- PHÂN QUYỀN CỐT LÕI ---
+        const isDirector = () => p().id === 'NV001';
+        const isAccountant = () => p().id === 'NV002';
+        const isHRAdmin = () => isDirector() || isAccountant();
+        const isSales = () => /Kinh doanh|Cộng tác|Marketing|CTV|Đại lý/i.test(p().ten + ' ' + p().bo_phan);
+        const isFactory = () => /Công nhân|Tổ trưởng/i.test(p().ten);
+
+        function badge(v) { return `<span class="badge ${v < 80 ? 'red' : v <= 110 ? 'yellow' : 'green'}">${v < 80 ? 'ĐỎ' : v <= 110 ? 'VÀNG' : 'XANH'}</span>` }
+        
+        function localISO(d) { return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-') }
+        function startDay(day, per) { 
+            let d = new Date(day + 'T12:00:00'); 
+            if (per === 'week') d.setDate(d.getDate() - (d.getDay() + 6) % 7); 
+            if (per === 'month') d.setDate(1); 
+            if (per === 'quarter') { d.setMonth(Math.floor(d.getMonth() / 3) * 3); d.setDate(1) } 
+            if (per === 'year') { d.setMonth(0); d.setDate(1) } 
+            return localISO(d) 
+        }
+        
+        function demoKpi(emp, per) { let base = emp.score || 0, off = { day: 6, week: 2, month: 0, quarter: -1, year: -2 }[per]; return Math.max(0, base + off) }
+        function kpi(emp, per, day) { 
+            let start = startDay(day, per), items = state.kpis.filter(x => x.emp === emp.id && x.day >= start && x.day <= day && x.approved); 
+            if (items.length) return { value: Math.round(items.reduce((a, x) => a + x.value, 0) / items.length), source: 'đã xác nhận', count: items.length }; 
+            return { value: demoKpi(emp, per), source: 'mô phỏng', count: 0 } 
+        }
+        
+        function progress(day) { 
+            const d = new Date(day + 'T12:00:00'), st = new Date(d.getFullYear(), d.getMonth(), 1, 12), end = new Date(d.getFullYear(), d.getMonth() + 1, 0, 12); 
+            let total = 0, done = 0; 
+            for (let x = new Date(st); x <= end; x.setDate(x.getDate() + 1)) { if (x.getDay() !== 0) { total++; if (x <= d) done++ } } 
+            return total ? done / total : 0 
+        }
+        
+        function reward(emp, score) { 
+            if (score < 80) return 0; 
+            if (score < 100) return emp.bonus * score / 100; 
+            if (score <= 110) return emp.bonus; 
+            return emp.bonus * (1 + Math.min((score - 110) * .02, .5)) 
+        }
+        
+        function income(emp, day) { 
+            const m = kpi(emp, 'month', day), fraction = progress(day), fixed = emp.base * fraction, bonus = reward(emp, m.value) * fraction, commission = emp.commissionRate ? state.orders.filter(o => o.owner === emp.id && o.paidAt && o.paidAt <= day && o.status === 'Đã thu tiền').reduce((t, o) => t + (Number(o.paid) || 0) * emp.commissionRate, 0) : 0; 
+            return { fixed, bonus, commission, total: fixed + bonus + commission, source: m.source } 
+        }
+
+        function hero() { 
+            let emp = p(), day = date.value, kd = kpi(emp, 'day', day), kw = kpi(emp, 'week', day), km = kpi(emp, 'month', day), inc = income(emp, day); 
+            $('hero').innerHTML = `
+            <section class="hero">
+                <h2>Xin chào, ${esc(emp.ten)}!</h2>
+                <small>THU NHẬP TẠM TÍNH ĐẾN ${esc(day)}</small>
+                <div class="money">${fmt(inc.total)}</div>
+                <div class="hint">Lương theo ngày công ${fmt(inc.fixed)} + thưởng KPI ${fmt(inc.bonus)}${emp.commissionRate ? ' + hoa hồng ' + fmt(inc.commission) : ''}</div>
+                <div class="grid" style="margin-top:20px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                    <div class="tile kpi"><small>KPI hôm nay</small><strong>${kd.value}%</strong> ${badge(kd.value)}<small>${kd.source}</small></div>
+                    <div class="tile kpi"><small>KPI tuần này</small><strong>${kw.value}%</strong> ${badge(kw.value)}<small>${kw.source}</small></div>
+                    <div class="tile kpi"><small>KPI tháng này</small><strong>${km.value}%</strong> ${badge(km.value)}<small>${km.source}</small></div>
+                </div>
+            </section>` 
+        }
+
+        const MENU = [
+            ['kpi', '<i class="fa-solid fa-chart-line"></i> KPI của tôi'], 
+            ['tasks', '<i class="fa-solid fa-list-check"></i> Công việc'], 
+            ['customers', '<i class="fa-solid fa-users"></i> Khách hàng'], 
+            ['orders', '<i class="fa-solid fa-file-invoice-dollar"></i> Đơn hàng'], 
+            ['production', '<i class="fa-solid fa-industry"></i> Sản xuất'], 
+            ['stock', '<i class="fa-solid fa-boxes-stacked"></i> Kho'], 
+            ['incidents', '<i class="fa-solid fa-triangle-exclamation"></i> Sự cố'], 
+            ['hr', '<i class="fa-solid fa-id-card"></i> Hồ sơ nhân sự'], 
+            ['violations', '<i class="fa-solid fa-gavel"></i> Quản lý vi phạm'], 
+            ['payroll', '<i class="fa-solid fa-money-check-dollar"></i> Bảng lương'], 
+            ['costs', '<i class="fa-solid fa-chart-pie"></i> Giảm 3% chi phí'], 
+            ['dashboard', '<i class="fa-solid fa-shield-halved"></i> Giám đốc']
+        ];
+
+        function visible() { 
+            if (isDirector()) return MENU;
+            if (isAccountant()) return MENU.filter(x => !['production', 'stock'].includes(x[0]));
+            if (isFactory()) return MENU.filter(x => ['kpi', 'tasks', 'production', 'stock', 'incidents', 'hr'].includes(x[0]));
+            if (isSales()) return MENU.filter(x => ['kpi', 'tasks', 'customers', 'orders', 'incidents', 'hr'].includes(x[0]));
+            return MENU.filter(x => ['kpi', 'tasks', 'hr', 'incidents'].includes(x[0])) 
+        }
+
+        function render() { 
+            hero(); 
+            let menus = visible(); 
+            if (!menus.some(x => x[0] === tab)) tab = 'kpi'; 
+            $('nav').innerHTML = menus.map(([id, label]) => `<button class="${tab === id ? 'active' : ''}" data-tab="${id}">${label}</button>`).join(''); 
+            $('nav').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; render() }); 
+            
+            const views = { kpi: kpiView, tasks: taskView, customers: customersView, orders: ordersView, production: productionView, stock: stockView, incidents: incidentsView, hr: hrView, violations: violationsView, payroll: payrollView, costs: costsView, dashboard: dashboardView };
+            if (views[tab]) views[tab]();
+        }
+
+        function kpiView() { 
+            let emp = p(), day = date.value, inc = income(emp, day); 
+            $('main').innerHTML = `
+            <section class="panel">
+                <h2><i class="fa-solid fa-chart-line" style="color:var(--primary)"></i> KPI và thu nhập đến ngày ${esc(day)}</h2>
+                <div class="grid">
+                    ${[['Ngày', 'day'], ['Tuần', 'week'], ['Tháng', 'month'], ['Quý', 'quarter'], ['Năm', 'year']].map(([n, k]) => { let r = kpi(emp, k, day); return `<div class="tile kpi"><small>${n}</small><strong>${r.value}%</strong> ${badge(r.value)}<small>${r.source}</small></div>` }).join('')}
+                </div>
+                <h3>Thu nhập tạm tính: <span style="color:var(--accent)">${fmt(inc.total)}</span></h3>
+                <p class="mini">Lương theo công ${fmt(inc.fixed)} + KPI ${fmt(inc.bonus)}${emp.commissionRate ? ' + hoa hồng ' + fmt(inc.commission) : ''}.</p>
+            </section>
+            <section class="panel">
+                <h2><i class="fa-solid fa-pen-to-square" style="color:var(--warning)"></i> Ghi nhận KPI có chứng cứ</h2>
+                <p class="hint">Chỉ Giám đốc hoặc Kế toán mới được xác nhận KPI.</p>
+                ${isHRAdmin() ? `
+                <div class="flex">
+                    <label>Ngày KPI<input id="kday" type="date" value="${esc(day)}"></label>
+                    <label>KPI (%)<input id="kvalue" type="number" min="0" max="200" value="100"></label>
+                    <label>Mã chứng cứ<input id="kevidence" placeholder="VD: BB-0123"></label>
+                </div>
+                <button class="primary" id="saveKpi">Ghi KPI đã xác nhận</button>` : ''}
+            </section>`;
+            if ($('saveKpi')) $('saveKpi').onclick = () => { 
+                let v = Number($('kvalue').value), ev = $('kevidence').value.trim(); 
+                if (!ev || v < 0 || v > 200) return alert('Cần chứng cứ và KPI 0–200%'); 
+                state.kpis = state.kpis.filter(x => !(x.emp === p().id && x.day === $('kday').value)); 
+                state.kpis.push({ emp: p().id, day: $('kday').value, value: v, evidence: ev, approved: true }); 
+                save(); render() 
+            } 
+        }
+
+        function taskView() { 
+            let day = date.value, emp = p(), items = state.tasks.filter(x => isDirector() || x.owner === emp.id); 
+            $('main').innerHTML = `
+            <section class="panel">
+                <h2><i class="fa-solid fa-list-check" style="color:var(--primary)"></i> Giao việc và nghiệm thu</h2>
+                ${isDirector() ? `
+                <div class="flex">
+                    <label>Người phụ trách<select id="taskOwner">${D.people.map(x => `<option value="${x.id}">${esc(x.id)} · ${esc(x.ten)}</option>`).join('')}</select></label>
+                    <label>Ngày thực hiện<input type="date" id="taskDate" value="${esc(day)}"></label>
+                    <label>Công việc<input id="taskTitle" placeholder="Tên công việc"></label>
+                    <label>Kết quả<input id="taskTarget" placeholder="Chỉ tiêu..."></label>
+                </div>
+                <button id="taskAdd" class="primary">Giao việc</button>` : ''}
+                <div class="scroll" style="margin-top: 16px">
+                    <table><thead><tr><th>Ngày</th><th>Nhân viên</th><th>Công việc</th><th>Kết quả</th><th>Trạng thái</th></tr></thead><tbody>${items.slice(-100).reverse().map(t => `<tr><td>${esc(t.day)}</td><td>${esc(t.owner)}</td><td>${esc(t.title)}</td><td>${esc(t.target)}</td><td><span class="badge ${t.status === 'Đã giao' ? 'yellow' : 'green'}">${esc(t.status)}</span></td></tr>`).join('')}</tbody></table>
+                </div>
+            </section>`;
+            if ($('taskAdd')) $('taskAdd').onclick = () => { 
+                let title = $('taskTitle').value.trim(), target = $('taskTarget').value.trim(); 
+                if (!title || !target) return alert('Nhập công việc và kết quả'); 
+                state.tasks.push({ id: 'CV' + Date.now(), owner: $('taskOwner').value, day: $('taskDate').value, title, target, status: 'Đã giao' }); save(); render() 
+            } 
+        }
+
+        function customerList() { let map = new Map(); for (const o of D.orders) { if (!map.has(o.khach)) map.set(o.khach, { id: 'M' + map.size, name: o.khach, phone: '', owner: '', status: 'Mẫu' }) } return [...map.values(), ...state.customers] }
+        function customersView() { let items = customerList(); $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-users" style="color:var(--primary)"></i> Sổ khách hàng</h2><div class="scroll"><table><thead><tr><th>Mã</th><th>Tên</th><th>Điện thoại</th><th>Trạng thái</th></tr></thead><tbody>${items.slice(0, 100).map(x => `<tr><td>${esc(x.id)}</td><td>${esc(x.name)}</td><td>${esc(x.phone || 'Chưa có')}</td><td>${esc(x.status)}</td></tr>`).join('')}</tbody></table></div></section>` }
+        function ordersView() { let orders = [...D.orders, ...state.orders], paid = orders.reduce((a, o) => a + (Number(o.paid) || 0), 0), total = orders.reduce((a, o) => a + (Number(o.gia_tri) || 0), 0); $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-file-invoice-dollar" style="color:var(--primary)"></i> Đơn hàng</h2><div class="grid"><div class="tile"><small>Tổng giá trị</small><strong>${fmt(total)}</strong></div><div class="tile"><small>Đã thu</small><strong style="color:var(--accent)">${fmt(paid)}</strong></div><div class="tile"><small>Còn nợ</small><strong style="color:var(--warning)">${fmt(total - paid)}</strong></div></div></section>` }
+        function productionView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-industry" style="color:var(--primary)"></i> Sản xuất và QC</h2><p class="notice">Chưa kết nối dữ liệu sản lượng thực tế.</p></section>` }
+        function stockView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-boxes-stacked" style="color:var(--primary)"></i> Kho</h2><p class="notice danger">Chưa có phiếu nhập/xuất được xác minh.</p></section>` }
+        function incidentsView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning)"></i> Sổ sự cố</h2><div class="scroll"><table><thead><tr><th>Mã</th><th>Bộ phận</th><th>Sự cố</th><th>Thiệt hại</th></tr></thead><tbody>${D.issues.map(x => `<tr><td>${esc(x.ma)}</td><td>${esc(x.bo_phan)}</td><td>${esc(x.van_de)}</td><td>${fmt(x.so_tien)}</td></tr>`).join('')}</tbody></table></div></section>` }
+        
+        function hrView() { 
+            let viewer = p(), canEdit = isHRAdmin(), emp = canEdit ? (D.people.find(x => x.id === $('hrEmployee')?.value) || viewer) : viewer;
+            $('main').innerHTML = `
+            <section class="panel">
+                <h2><i class="fa-solid fa-id-card" style="color:var(--primary)"></i> Hồ sơ nhân sự · ${esc(emp.id)}</h2>
+                ${canEdit ? `<label>Chọn nhân viên<select id="hrEmployee" onchange="render()">${D.people.map(x => `<option value="${esc(x.id)}" ${x.id === emp.id ? 'selected' : ''}>${esc(x.ten)}</option>`).join('')}</select></label>` : ''}
+                <p class="hint">Hồ sơ đang xem: ${esc(emp.ten)}</p>
+            </section>`;
+        }
+
+        function violationsView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-gavel" style="color:var(--danger)"></i> Quản lý vi phạm</h2><p class="hint">Chưa có biên bản vi phạm nào được ghi nhận.</p></section>` }
+        
+        function payrollView() { 
+            $('main').innerHTML = `
+            <section class="panel">
+                <h2><i class="fa-solid fa-money-check-dollar" style="color:var(--accent)"></i> Bảng lương tạm tính</h2>
+                <div class="scroll">
+                    <table><thead><tr><th>Nhân viên</th><th>KPI tháng</th><th>Lương</th><th>Thưởng</th><th>Tổng</th></tr></thead><tbody>${D.people.map(x => { let y = income(x, date.value); return `<tr><td>${esc(x.id)} · ${esc(x.ten)}</td><td>${kpi(x, 'month', date.value).value}%</td><td>${fmt(y.fixed)}</td><td>${fmt(y.bonus)}</td><td style="color:var(--accent); font-weight:700">${fmt(y.total)}</td></tr>` }).join('')}</tbody></table>
+                </div>
+            </section>` 
+        }
+
+        function costsView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-chart-pie" style="color:var(--primary)"></i> Phân tích chi phí</h2><p>Chưa có dữ liệu nhập.</p></section>` }
+        function dashboardView() { $('main').innerHTML = `<section class="panel"><h2><i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i> Bảng điều hành</h2><p>Tổng quan hệ thống.</p></section>` }
+
+        who.onchange = () => { current = Number(who.value); tab = 'kpi'; render() }; 
+        date.onchange = render; 
+        $('period').onchange = () => { tab = 'kpi'; render() }; 
+        $('aiButton').onclick = () => { $('aiBox').classList.toggle('open') }; 
+
+        // --- TRỢ LÝ AI THÔNG MINH (ĐỌC DATA & PHÂN QUYỀN) ---
+        $('ask').onclick = () => { 
+            let q = $('question').value.toLowerCase().trim(); 
+            if (!q) return;
+            
+            let currentUser = p();
+            let reply = "";
+            
+            // Tìm đối tượng được hỏi
+            const findTarget = (text) => {
+                if (text.includes('của tôi') || text.includes('tôi') || text.includes('tao')) return currentUser;
+                let found = D.people.find(x => text.includes(x.ten.toLowerCase()) || text.includes(x.id.toLowerCase()));
+                return found || currentUser;
+            };
+
+            if (q.includes('lương') || q.includes('thu nhập') || q.includes('tiền')) {
+                let target = findTarget(q);
+                
+                if (target.id !== currentUser.id && !isDirector() && !isAccountant()) {
+                    reply = `🔒 TỪ CHỐI: Bạn không có quyền xem lương của ${target.ten}. Chỉ Giám đốc và Kế toán mới được xem lương toàn công ty.`;
+                } else {
+                    let inc = income(target, date.value);
+                    reply = `💰 THU NHẬP CỦA ${target.ten.toUpperCase()} (Đến ${date.value}):\n`;
+                    reply += `- Lương theo ngày công: ${fmt(inc.fixed)}\n`;
+                    reply += `- Thưởng KPI (${kpi(target, 'month', date.value).value}%): ${fmt(inc.bonus)}\n`;
+                    if (target.commissionRate) reply += `- Hoa hồng doanh số: ${fmt(inc.commission)}\n`;
+                    reply += `=> TỔNG TẠM TÍNH: ${fmt(inc.total)}\n`;
+                    reply += `*(Lưu ý: Dữ liệu mô phỏng, chưa quyết toán)*`;
+                }
+            } 
+            else if (q.includes('kpi') || q.includes('hiệu suất')) {
+                let target = findTarget(q);
+                if (target.id !== currentUser.id && !isDirector() && !isAccountant()) {
+                    reply = `🔒 TỪ CHỐI: Bạn không có quyền xem KPI của ${target.ten}.`;
+                } else {
+                    reply = `📊 KPI CỦA ${target.ten.toUpperCase()}:\n`;
+                    reply += `- Hôm nay: ${kpi(target, 'day', date.value).value}%\n`;
+                    reply += `- Tuần này: ${kpi(target, 'week', date.value).value}%\n`;
+                    reply += `- Tháng này: ${kpi(target, 'month', date.value).value}%\n`;
+                }
+            }
+            else if (q.includes('chi phí') || q.includes('3%')) {
+                if (!isDirector()) {
+                    reply = `🔒 TỪ CHỐI: Chỉ Giám đốc mới có quyền truy cập phân tích chi phí toàn công ty.`;
+                } else {
+                    reply = `📉 CHI PHÍ THÁNG ${date.value.slice(0,7)}:\nChưa có dữ liệu nhập. Vui lòng vào tab "Giảm 3% chi phí" để nhập số liệu.`;
+                }
+            }
+            else if (q.includes('đơn') || q.includes('doanh thu') || q.includes('bán hàng')) {
+                if (!isDirector() && !isAccountant() && !isSales()) {
+                    reply = `🔒 TỪ CHỐI: Bạn không có quyền truy cập dữ liệu kinh doanh.`;
+                } else {
+                    let orders = [...D.orders, ...state.orders];
+                    let total = orders.reduce((a, o) => a + (Number(o.gia_tri) || 0), 0);
+                    let paid = orders.reduce((a, o) => a + (Number(o.paid) || 0), 0);
+                    reply = `🛒 TÌNH HÌNH KINH DOANH:\n- Tổng số đơn: ${orders.length}\n- Tổng giá trị: ${fmt(total)}\n- Đã thu: ${fmt(paid)}\n- Còn nợ: ${fmt(total - paid)}`;
+                }
+            }
+            else if (q.includes('sản xuất') || q.includes('kho') || q.includes('vật tư')) {
+                if (isAccountant() || (!isDirector() && !isFactory())) {
+                    reply = `🔒 TỪ CHỐI: Bạn không có quyền truy cập dữ liệu Sản xuất / Kho.`;
+                } else {
+                    reply = `🏭 DỮ LIỆU SẢN XUẤT:\nHệ thống chưa kết nối cảm biến tồn kho và sản lượng thực tế.`;
+                }
+            }
+            else {
+                reply = `Xin lỗi, tôi chưa hiểu câu hỏi. Bạn có thể hỏi tôi về:\n- "Lương của tôi" / "Lương giám đốc"\n- "KPI tháng này của tôi"\n- "Chi phí công ty" (nếu bạn là sếp)\n- "Doanh thu"`;
+            }
+
+            let currentText = $('messages').textContent;
+            $('messages').textContent = currentText + '\n\n👤 Bạn: ' + $('question').value + '\n\n🤖 Trợ lý:\n' + reply;
+            $('messages').scrollTop = $('messages').scrollHeight;
+            $('question').value = '';
+        }; 
+        
+        render();
+    </script>
+</body>
+
+</html>

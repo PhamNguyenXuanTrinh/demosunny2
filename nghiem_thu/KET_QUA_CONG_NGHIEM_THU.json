@@ -1,0 +1,20 @@
+{
+  "api_method_path_count": 121,
+  "api_target_minimum": 100,
+  "api_count_pass": true,
+  "files": {
+    "backend/main.py": true,
+    "backend/db.py": true,
+    "backend/security.py": true,
+    "database/schema_target.sql": true,
+    "public/index.html": true,
+    "requirements.txt": true
+  },
+  "files_pass": true,
+  "tests_pass": true,
+  "tests_exit_code": 0,
+  "test_output": "..............................................                           [100%]\n46 passed in 6.36s\n\n",
+  "source_gate_pass": true,
+  "full_erp_accepted": false,
+  "reason": "Chưa có bằng chứng UAT đầu-cuối, kiểm thử an ninh độc lập, xác nhận kế toán pháp định, thử thiết bị thực và khôi phục sao lưu."
+}

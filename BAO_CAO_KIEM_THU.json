@@ -1,0 +1,17 @@
+{
+  "tests_total": 4,
+  "passed": 4,
+  "failed": 0,
+  "scope": [
+    "auth and private files",
+    "customer order duplicate",
+    "stock threshold duplicate negative",
+    "purchase idempotency validation"
+  ],
+  "limitations": [
+    "not full frontend integration",
+    "no OCR",
+    "agents are SQLite rules",
+    "not production security certified"
+  ]
+}

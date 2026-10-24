@@ -1,0 +1,21 @@
+services:
+  sunny-api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - ../.env
+    environment:
+      SUNNY_DB_PATH: /srv/sunny/data/sunny.sqlite3
+    volumes:
+      - sunny_data:/srv/sunny/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+volumes:
+  sunny_data:

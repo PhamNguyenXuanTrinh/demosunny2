@@ -1,0 +1,150 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/agents/history"
+  },
+  {
+    "method": "GET",
+    "path": "/api/agents/status"
+  },
+  {
+    "method": "GET",
+    "path": "/api/audit"
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/me"
+  },
+  {
+    "method": "GET",
+    "path": "/api/automation/status"
+  },
+  {
+    "method": "GET",
+    "path": "/api/costs/3-percent"
+  },
+  {
+    "method": "GET",
+    "path": "/api/dashboard"
+  },
+  {
+    "method": "GET",
+    "path": "/api/docs"
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents/review-queue"
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents/{document_id}/extraction"
+  },
+  {
+    "method": "GET",
+    "path": "/api/health"
+  },
+  {
+    "method": "GET",
+    "path": "/api/integration/coverage"
+  },
+  {
+    "method": "GET",
+    "path": "/api/kpi/overview"
+  },
+  {
+    "method": "GET",
+    "path": "/api/marketing"
+  },
+  {
+    "method": "GET",
+    "path": "/api/meta/modules"
+  },
+  {
+    "method": "GET",
+    "path": "/api/openapi.json"
+  },
+  {
+    "method": "GET",
+    "path": "/api/realtime"
+  },
+  {
+    "method": "GET",
+    "path": "/api/status"
+  },
+  {
+    "method": "GET",
+    "path": "/api/stock/summary"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/{table}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/warehouses"
+  },
+  {
+    "method": "HEAD",
+    "path": "/api/docs"
+  },
+  {
+    "method": "HEAD",
+    "path": "/api/openapi.json"
+  },
+  {
+    "method": "POST",
+    "path": "/api/agents/run"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ask"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login"
+  },
+  {
+    "method": "POST",
+    "path": "/api/documents/intake"
+  },
+  {
+    "method": "POST",
+    "path": "/api/documents/{document_id}/review"
+  },
+  {
+    "method": "POST",
+    "path": "/api/electric"
+  },
+  {
+    "method": "POST",
+    "path": "/api/marketing/create"
+  },
+  {
+    "method": "POST",
+    "path": "/api/marketing/review"
+  },
+  {
+    "method": "POST",
+    "path": "/api/marketing/seed"
+  },
+  {
+    "method": "POST",
+    "path": "/api/purchases/commit"
+  },
+  {
+    "method": "POST",
+    "path": "/api/run"
+  },
+  {
+    "method": "POST",
+    "path": "/api/stock"
+  },
+  {
+    "method": "POST",
+    "path": "/api/stock/movements"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/{table}"
+  }
+]

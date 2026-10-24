@@ -1,0 +1,610 @@
+{
+  "total_method_paths": 121,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/accounting/accounts",
+      "name": "accounts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/accounts",
+      "name": "account_add"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/financial-summary",
+      "name": "financial_summary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/journal",
+      "name": "post_journal"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/open-items",
+      "name": "open_items"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/open-items",
+      "name": "create_item"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/parties",
+      "name": "parties"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/parties",
+      "name": "party_add"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/periods",
+      "name": "periods"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/periods/close",
+      "name": "close_period"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/settlements",
+      "name": "settle"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/trial-balance",
+      "name": "trial_balance"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/vat-lines",
+      "name": "vat_add"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/vat-summary",
+      "name": "vat_summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/history",
+      "name": "agent_history"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agents/run",
+      "name": "agent_run"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/status",
+      "name": "agents_status"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ask",
+      "name": "ask"
+    },
+    {
+      "method": "GET",
+      "path": "/api/audit",
+      "name": "audit_history"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "name": "login"
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "name": "me"
+    },
+    {
+      "method": "GET",
+      "path": "/api/automation/status",
+      "name": "automation_status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/costs/3-percent",
+      "name": "costs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "name": "dashboard"
+    },
+    {
+      "method": "GET",
+      "path": "/api/devices/readings",
+      "name": "list_readings"
+    },
+    {
+      "method": "POST",
+      "path": "/api/devices/readings",
+      "name": "ingest"
+    },
+    {
+      "method": "GET",
+      "path": "/api/docs",
+      "name": "swagger_ui_html"
+    },
+    {
+      "method": "POST",
+      "path": "/api/documents/intake",
+      "name": "document_intake"
+    },
+    {
+      "method": "GET",
+      "path": "/api/documents/review-queue",
+      "name": "review_queue"
+    },
+    {
+      "method": "GET",
+      "path": "/api/documents/{document_id}/extraction",
+      "name": "get_extraction"
+    },
+    {
+      "method": "POST",
+      "path": "/api/documents/{document_id}/review",
+      "name": "review_extraction"
+    },
+    {
+      "method": "POST",
+      "path": "/api/electric",
+      "name": "electric"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/approvals",
+      "name": "list_approvals"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/approvals",
+      "name": "create_approval"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/approvals/{approval_id}/decision",
+      "name": "decide_approval"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/approvals/{approval_id}/history",
+      "name": "approval_history"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/bill-of-materials",
+      "name": "list_bill-of-materials"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/bill-of-materials",
+      "name": "create_bill-of-materials"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/bill-of-materials/{record_id}",
+      "name": "get_bill-of-materials"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/bill-of-materials/{record_id}",
+      "name": "update_bill-of-materials"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/customer-claims",
+      "name": "list_customer-claims"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/customer-claims",
+      "name": "create_customer-claims"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/customer-claims/{record_id}",
+      "name": "get_customer-claims"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/customer-claims/{record_id}",
+      "name": "update_customer-claims"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/delivery-plans",
+      "name": "list_delivery-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/delivery-plans",
+      "name": "create_delivery-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/delivery-plans/{record_id}",
+      "name": "get_delivery-plans"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/delivery-plans/{record_id}",
+      "name": "update_delivery-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/dashboard",
+      "name": "integrity_dashboard"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/journal-balance",
+      "name": "journal_balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/missing-source-documents",
+      "name": "missing_source_documents"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/pending-approvals",
+      "name": "pending_approvals"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/production-balance",
+      "name": "production_balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/unverified-production",
+      "name": "unverified_production"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/maintenance-plans",
+      "name": "list_maintenance-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/maintenance-plans",
+      "name": "create_maintenance-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/maintenance-plans/{record_id}",
+      "name": "get_maintenance-plans"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/maintenance-plans/{record_id}",
+      "name": "update_maintenance-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/material-specs",
+      "name": "list_material-specs"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/material-specs",
+      "name": "create_material-specs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/material-specs/{record_id}",
+      "name": "get_material-specs"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/material-specs/{record_id}",
+      "name": "update_material-specs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/production/summary",
+      "name": "production_summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/purchase-requests",
+      "name": "list_purchase-requests"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/purchase-requests",
+      "name": "create_purchase-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/purchase-requests/{record_id}",
+      "name": "get_purchase-requests"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/purchase-requests/{record_id}",
+      "name": "update_purchase-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/safety-inspections",
+      "name": "list_safety-inspections"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/safety-inspections",
+      "name": "create_safety-inspections"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/safety-inspections/{record_id}",
+      "name": "get_safety-inspections"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/safety-inspections/{record_id}",
+      "name": "update_safety-inspections"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/sales-quotations",
+      "name": "list_sales-quotations"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/sales-quotations",
+      "name": "create_sales-quotations"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/sales-quotations/{record_id}",
+      "name": "get_sales-quotations"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/sales-quotations/{record_id}",
+      "name": "update_sales-quotations"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/shift-plans",
+      "name": "list_shift-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/shift-plans",
+      "name": "create_shift-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/shift-plans/{record_id}",
+      "name": "get_shift-plans"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/shift-plans/{record_id}",
+      "name": "update_shift-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/supplier-contracts",
+      "name": "list_supplier-contracts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/supplier-contracts",
+      "name": "create_supplier-contracts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/supplier-contracts/{record_id}",
+      "name": "get_supplier-contracts"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/supplier-contracts/{record_id}",
+      "name": "update_supplier-contracts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/training-records",
+      "name": "list_training-records"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/training-records",
+      "name": "create_training-records"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/training-records/{record_id}",
+      "name": "get_training-records"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/training-records/{record_id}",
+      "name": "update_training-records"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/work-centers",
+      "name": "list_work-centers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/work-centers",
+      "name": "create_work-centers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/work-centers/{record_id}",
+      "name": "get_work-centers"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/work-centers/{record_id}",
+      "name": "update_work-centers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/evidence/verify-production/{batch_id}",
+      "name": "verify_production"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "name": "health"
+    },
+    {
+      "method": "GET",
+      "path": "/api/integration/coverage",
+      "name": "coverage"
+    },
+    {
+      "method": "GET",
+      "path": "/api/kpi/overview",
+      "name": "kpi_overview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/marketing",
+      "name": "marketing"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/create",
+      "name": "marketing_create"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/review",
+      "name": "marketing_review"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/seed",
+      "name": "seed"
+    },
+    {
+      "method": "GET",
+      "path": "/api/meta/modules",
+      "name": "modules"
+    },
+    {
+      "method": "GET",
+      "path": "/api/openapi.json",
+      "name": "openapi"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/accounting/ledger",
+      "name": "ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/alerts",
+      "name": "alerts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/device-bindings",
+      "name": "bindings"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/device-bindings",
+      "name": "bind_device"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/evidence",
+      "name": "link_evidence"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/verify/{batch_id}",
+      "name": "verify"
+    },
+    {
+      "method": "POST",
+      "path": "/api/purchases/commit",
+      "name": "purchase"
+    },
+    {
+      "method": "GET",
+      "path": "/api/realtime",
+      "name": "realtime"
+    },
+    {
+      "method": "GET",
+      "path": "/api/resources/{resource}",
+      "name": "list_resource"
+    },
+    {
+      "method": "POST",
+      "path": "/api/resources/{resource}",
+      "name": "create_resource"
+    },
+    {
+      "method": "GET",
+      "path": "/api/resources/{resource}/{record_id}",
+      "name": "get_resource"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/resources/{resource}/{record_id}",
+      "name": "update_resource"
+    },
+    {
+      "method": "POST",
+      "path": "/api/run",
+      "name": "run"
+    },
+    {
+      "method": "GET",
+      "path": "/api/status",
+      "name": "status"
+    },
+    {
+      "method": "POST",
+      "path": "/api/stock",
+      "name": "legacy_stock"
+    },
+    {
+      "method": "POST",
+      "path": "/api/stock/movements",
+      "name": "move"
+    },
+    {
+      "method": "GET",
+      "path": "/api/stock/summary",
+      "name": "stock_summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/{table}",
+      "name": "list_records"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/{table}",
+      "name": "create_record"
+    },
+    {
+      "method": "GET",
+      "path": "/api/warehouses",
+      "name": "warehouses"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.......................................F........                         [100%]
+=================================== FAILURES ===================================
+__________________ test_original_v86_is_default_and_preserved __________________
+
+    def test_original_v86_is_default_and_preserved():
+>       assert hashlib.sha256((ROOT/'public/index.html').read_bytes()).digest()==hashlib.sha256((ROOT/'public/v86.html').read_bytes()).digest()
+E       AssertionError: assert b'\xaa\x95;\x...\xf6\xa4G\xb2' == b'T\xa3\xb6\x...9\x87\x07\x10'
+E         
+E         At index 0 diff: b'\xaa' != b'T'
+E         
+E         Full diff:
+E         - (b'T\xa3\xb6\xf1,\x12\xbc\xfbu\x03J\x81\xacl\x0f\xa2\x12\xfc\xc0\xc8\x8eKN\xcb'
+E         -  b'\x10{\x0f\xec\xd9\x87\x07\x10')
+E         + (b'\xaa\x95;\xc4$DVYb\x89\xeb\x0e\xfc\x1b\xb9\x18\n!\xb73\xb9\x8a:j\x97P[\x1f'
+E         +  b'\xf6\xa4G\xb2')
+
+tests/test_v86_preservation.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_v86_preservation.py::test_original_v86_is_default_and_preserved - AssertionError: assert b'\xaa\x95;\x...\xf6\xa4G\xb2' == b'T\xa3\xb6\x...9\x87\x07\x10'
+  
+  At index 0 diff: b'\xaa' != b'T'
+  
+  Full diff:
+  - (b'T\xa3\xb6\xf1,\x12\xbc\xfbu\x03J\x81\xacl\x0f\xa2\x12\xfc\xc0\xc8\x8eKN\xcb'
+  -  b'\x10{\x0f\xec\xd9\x87\x07\x10')
+  + (b'\xaa\x95;\xc4$DVYb\x89\xeb\x0e\xfc\x1b\xb9\x18\n!\xb73\xb9\x8a:j\x97P[\x1f'
+  +  b'\xf6\xa4G\xb2')
+1 failed, 47 passed in 6.47s

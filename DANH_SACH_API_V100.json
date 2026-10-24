@@ -1,0 +1,497 @@
+{
+  "count": 123,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/accounting/accounts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/accounts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/financial-summary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/journal"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/open-items"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/open-items"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/parties"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/parties"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/periods"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/periods/close"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/settlements"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/trial-balance"
+    },
+    {
+      "method": "POST",
+      "path": "/api/accounting/vat-lines"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounting/vat-summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/history"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agents/run"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/status"
+    },
+    {
+      "method": "POST",
+      "path": "/api/ask"
+    },
+    {
+      "method": "GET",
+      "path": "/api/audit"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me"
+    },
+    {
+      "method": "GET",
+      "path": "/api/automation/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/costs/3-percent"
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "path": "/api/devices/readings"
+    },
+    {
+      "method": "POST",
+      "path": "/api/devices/readings"
+    },
+    {
+      "method": "GET",
+      "path": "/api/docs"
+    },
+    {
+      "method": "POST",
+      "path": "/api/documents/intake"
+    },
+    {
+      "method": "GET",
+      "path": "/api/documents/review-queue"
+    },
+    {
+      "method": "GET",
+      "path": "/api/documents/{document_id}/extraction"
+    },
+    {
+      "method": "POST",
+      "path": "/api/documents/{document_id}/review"
+    },
+    {
+      "method": "POST",
+      "path": "/api/electric"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/approvals"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/approvals"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/approvals/{approval_id}/decision"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/approvals/{approval_id}/history"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/bill-of-materials"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/bill-of-materials"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/bill-of-materials/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/bill-of-materials/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/customer-claims"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/customer-claims"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/customer-claims/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/customer-claims/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/delivery-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/delivery-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/delivery-plans/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/delivery-plans/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/dashboard"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/journal-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/missing-source-documents"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/pending-approvals"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/production-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/integrity/unverified-production"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/maintenance-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/maintenance-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/maintenance-plans/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/maintenance-plans/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/material-specs"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/material-specs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/material-specs/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/material-specs/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/production/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/purchase-requests"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/purchase-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/purchase-requests/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/purchase-requests/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/safety-inspections"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/safety-inspections"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/safety-inspections/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/safety-inspections/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/sales-quotations"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/sales-quotations"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/sales-quotations/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/sales-quotations/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/shift-plans"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/shift-plans"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/shift-plans/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/shift-plans/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/supplier-contracts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/supplier-contracts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/supplier-contracts/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/supplier-contracts/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/training-records"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/training-records"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/training-records/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/training-records/{record_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/work-centers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/erp/work-centers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/erp/work-centers/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/erp/work-centers/{record_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/evidence/verify-production/{batch_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health"
+    },
+    {
+      "method": "GET",
+      "path": "/api/integration/coverage"
+    },
+    {
+      "method": "GET",
+      "path": "/api/kpi/overview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/marketing"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/create"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/review"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/seed"
+    },
+    {
+      "method": "GET",
+      "path": "/api/meta/modules"
+    },
+    {
+      "method": "GET",
+      "path": "/api/openapi.json"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/accounting/ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/alerts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/device-bindings"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/device-bindings"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/evidence"
+    },
+    {
+      "method": "POST",
+      "path": "/api/operations/verify/{batch_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/purchases/commit"
+    },
+    {
+      "method": "GET",
+      "path": "/api/realtime"
+    },
+    {
+      "method": "GET",
+      "path": "/api/resources/{resource}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/resources/{resource}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/resources/{resource}/{record_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/resources/{resource}/{record_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/run"
+    },
+    {
+      "method": "GET",
+      "path": "/api/status"
+    },
+    {
+      "method": "POST",
+      "path": "/api/stock"
+    },
+    {
+      "method": "POST",
+      "path": "/api/stock/movements"
+    },
+    {
+      "method": "GET",
+      "path": "/api/stock/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/{table}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/{table}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/warehouses"
+    },
+    {
+      "method": "GET",
+      "path": "/docs/oauth2-redirect"
+    },
+    {
+      "method": "GET",
+      "path": "/redoc"
+    }
+  ]
+}

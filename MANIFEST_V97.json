@@ -1,0 +1,436 @@
+{
+  "version": "V97",
+  "test_result": "41 passed",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "d366cae7298693f1f938122c2e9fd7e83c5c1faf5571310b969caf11aeeb00fa",
+      "bytes": 378
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "97f06a213dc01efc3c3c3897d986c35f9b99fdbe5830107cddacda2dc2ebce27",
+      "bytes": 56
+    },
+    {
+      "path": "BAO_CAO_BAN_GIAO_V90.md",
+      "sha256": "6e3650eebbef048423a982f45600296bf79e82be97b5ea3731f3503460e7e4de",
+      "bytes": 3683
+    },
+    {
+      "path": "BAO_CAO_BAN_GIAO_V92.md",
+      "sha256": "507dfddba08230a7628391ad2cfc869ef092cacba343cb33d400593e6cd8499d",
+      "bytes": 2941
+    },
+    {
+      "path": "BAO_CAO_BAN_GIAO_V93.md",
+      "sha256": "425d6bcfee61b12b91c9ee77e2e3af60229ca6d1eb20f6e9ffa65045f4eb2e64",
+      "bytes": 1789
+    },
+    {
+      "path": "BAO_CAO_KIEM_THU.json",
+      "sha256": "d429232f87e2e394d4b4d5d5ed552fb204edad4ea552e733cdefdbb7f1a73c9c",
+      "bytes": 358
+    },
+    {
+      "path": "BAO_CAO_KIEM_THU.txt",
+      "sha256": "94ab1fae70c53b4065f957d15001e372de890cf76bfd05f6b303eb360fb20304",
+      "bytes": 1011
+    },
+    {
+      "path": "BAO_CAO_KIEM_THU_FRONTEND_BACKEND_V89.md",
+      "sha256": "af63671167b28e3bb9747d7a190809a0a93098d68f384d0626eb4ae749209aa6",
+      "bytes": 2025
+    },
+    {
+      "path": "BAO_CAO_RAO_SOAT_MOI.md",
+      "sha256": "5a4b72b37124ea6e38be67c13820c7dd83998ab59dfb08d31830dd334bb3c9ab",
+      "bytes": 1369
+    },
+    {
+      "path": "BAO_CAO_V87_KIEM_THU_VA_GIOI_HAN.md",
+      "sha256": "9addb2a2e62dbf1ded692c364370d090944abb7e6faa7509f80d90c67fe58d50",
+      "bytes": 1597
+    },
+    {
+      "path": "BAO_CAO_V88.md",
+      "sha256": "04c35a5ddd23aa80ceeb58903c610c2afe2765a4597d67c88ed7b6691f75032f",
+      "bytes": 1227
+    },
+    {
+      "path": "BAO_CAO_V91_THUC_HIEN.md",
+      "sha256": "26e9feefa15a7fb2a14ffd858262507e06dd1b0e2fa0ecf9dcf9c11ea623bd5a",
+      "bytes": 3084
+    },
+    {
+      "path": "BAO_CAO_V95.md",
+      "sha256": "9ee46cdfa607871c7928c2bf726e6626a85679ca50f713eb167702e8a67cf9f8",
+      "bytes": 630
+    },
+    {
+      "path": "CHAY_KIEM_THU.sh",
+      "sha256": "596b8f99275d8142301a24fec76e03f0b9fee44f3f163b7dec9754645d2c2ce5",
+      "bytes": 38
+    },
+    {
+      "path": "CHAY_WINDOWS.bat",
+      "sha256": "149d306e1048a4cf3b1313d2db6bc5aa996dc85411d42787e77180654c074855",
+      "bytes": 319
+    },
+    {
+      "path": "DANH_SACH_API.json",
+      "sha256": "1ec19c2aa6f43648ee2a4f8ebf889c07003fd4b49a87193537b5295ecf3a0677",
+      "bytes": 3119
+    },
+    {
+      "path": "DANH_SACH_API_V90.json",
+      "sha256": "77c1f4cf0a66afeca6f84176fc82e91ad61a64d76693c15768b7bcff05ff16cf",
+      "bytes": 2314
+    },
+    {
+      "path": "DANH_SACH_API_V93.json",
+      "sha256": "e949c5bffce049894c1d95052ea47d60050b656668bc912303f41b0716d3de06",
+      "bytes": 3188
+    },
+    {
+      "path": "DANH_SACH_API_V94.json",
+      "sha256": "9963a6538aa440c932e42506b4b48877471d93f3135a7759907a3785c01d3a05",
+      "bytes": 33611
+    },
+    {
+      "path": "DANH_SACH_API_V95.json",
+      "sha256": "c4d4c515b653041a812e39a54a574fc73899478394eb6bfcf927a0dee7e3e644",
+      "bytes": 59928
+    },
+    {
+      "path": "HUONG_DAN_BAN_GIAO.md",
+      "sha256": "da8c449f276f38329d1a79381ca3ebe367d6f1b39be03e7044099107fa5cba34",
+      "bytes": 560
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_BAN_GIAO.txt",
+      "sha256": "a308cbd087d471b389e550fe2071f6c1aed1f2ac4fc62c792c38c52fec2dd1fd",
+      "bytes": 143
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_THUC_TE.txt",
+      "sha256": "03994d8506eebe5c826db59da38217a7edeff355d0dc1552fbd7c0f520e96f75",
+      "bytes": 100
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V89.txt",
+      "sha256": "bd3c8e458a73768e79423c723d7b9d479d3951a8df03eff2f94820c7e1a4dc60",
+      "bytes": 99
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V92.txt",
+      "sha256": "081f4e5942bedf1a7d74a4bd0b3387c6ea5c74b7f52cccb2e1ddc4147cede774",
+      "bytes": 99
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V93.txt",
+      "sha256": "58197a987d5176312da301f7eb875ecbec10e1b8357e4f81aa304f419629150b",
+      "bytes": 263
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V94.txt",
+      "sha256": "4bb41491327108b6633e2906c0385b7d6023b19c55539c0721e57702a3679759",
+      "bytes": 99
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V95.txt",
+      "sha256": "b762f25acf971de55a1a3236ae6e1d759a2bb0eb0e6dc6ac11b81e4ada363978",
+      "bytes": 99
+    },
+    {
+      "path": "KET_QUA_KIEM_THU_V96.txt",
+      "sha256": "1fe4b583ea326483b506c9659e11f8dee702a465575f1429fbc7cb6cd19f797e",
+      "bytes": 100
+    },
+    {
+      "path": "MANIFEST_SHA256.json",
+      "sha256": "fe295f8326cffbdef4b8df1ecffc9676046a83c799e43cb50f44ab1f5e4c1134",
+      "bytes": 8749
+    },
+    {
+      "path": "MANIFEST_SHA256_V95.json",
+      "sha256": "f95a7d5d4e2a70f43ea5d65cf1318f3e417d4767d71e4b87de7b99de461a4d43",
+      "bytes": 6435
+    },
+    {
+      "path": "MANIFEST_TEP_VA_SHA256.json",
+      "sha256": "5891c0c912b68ddc35abc6f58c13b394b8d3b819e211667d815b725f133fc516",
+      "bytes": 10364
+    },
+    {
+      "path": "MANIFEST_V96.json",
+      "sha256": "df8de098b79e7828f68db06890a847161bf3d674a3b548318559bc2a08a4f063",
+      "bytes": 12169
+    },
+    {
+      "path": "MANIFEST_V97.json",
+      "sha256": "768e50baa49742f458b438e22dfc456688ad924c5c1077b8106865f2c82d9002",
+      "bytes": 13695
+    },
+    {
+      "path": "README.md",
+      "sha256": "c4c6f5d5ff5e245101eed0587789c229103c1221cedf3af71553004c1cd1e963",
+      "bytes": 1813
+    },
+    {
+      "path": "README_BAN_GIAO_V94.md",
+      "sha256": "9eb52b6bfd8fb228be418339c308775e770855237062b9d35d1fe040b2c138f2",
+      "bytes": 3473
+    },
+    {
+      "path": "README_BAN_GIAO_V95.md",
+      "sha256": "1148d23901c02af567df5af0086a40d2328add2e8b1f879630085af661eabee4",
+      "bytes": 990
+    },
+    {
+      "path": "README_BAN_GIAO_V96.md",
+      "sha256": "75099ccd244f5018a99d03c0952c61254af494c70658d94a96752a06b454519d",
+      "bytes": 1370
+    },
+    {
+      "path": "README_HOAN_THIEN.md",
+      "sha256": "21b2401185aa51d1ecae147a6448b557d10de3781893a26dbe570264774b9806",
+      "bytes": 1201
+    },
+    {
+      "path": "archive/V86_GOC_BAT_BIEN.html",
+      "sha256": "aa953bc4244456596289eb0efc1bb9180a21b733b98a3a6a97505b1ff6a447b2",
+      "bytes": 877376
+    },
+    {
+      "path": "archive/V86_LEGACY_PRE_V93.html",
+      "sha256": "f8d0a4a885d09d2a3a9efe6ec2b8b037186cad6fd5a6f093ab2a9f82b422cc6c",
+      "bytes": 1018926
+    },
+    {
+      "path": "backend/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "backend/accounting.py",
+      "sha256": "9b0f3898234e0b46580f1d802c5526e776519467f62bbfe01b46e78270d4cfca",
+      "bytes": 12569
+    },
+    {
+      "path": "backend/agents.py",
+      "sha256": "a9738740366aac1c5557b43d63139ac4794fb91c7813a8e3084881a964f21176",
+      "bytes": 2053
+    },
+    {
+      "path": "backend/automation.py",
+      "sha256": "26ab761e1fe10c503b85caea5dbcd0373dd00f8293307b975f7c826b4bdab530",
+      "bytes": 4890
+    },
+    {
+      "path": "backend/compat.py",
+      "sha256": "1c2a1aa5a5bd57195cbef2a9847e8e252b02d165d87216c9996644f03ce59480",
+      "bytes": 10241
+    },
+    {
+      "path": "backend/db.py",
+      "sha256": "8308f9347d6ccefba067d2580926d9e57374501d944742ac13bba3513276ce9d",
+      "bytes": 2544
+    },
+    {
+      "path": "backend/devices.py",
+      "sha256": "6a4e2360c97e71e7d0e92017db426ab605593e9a1fbe0993c932e318a7244a96",
+      "bytes": 4048
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "ea79536082fc4a85db6606d82dfa3d5fb3a8984614a6ac2e5e6579fe063fff82",
+      "bytes": 25146
+    },
+    {
+      "path": "backend/operations.py",
+      "sha256": "3e9bf7655a06ba3311a8ad534e77c02d8ad9666b021aee95db2634b8a74a36f4",
+      "bytes": 7745
+    },
+    {
+      "path": "backend/resources.py",
+      "sha256": "a58199956eee61a2a82ab83f2844b93b0b82ee36249d44ee1ebfb79fd456786d",
+      "bytes": 5429
+    },
+    {
+      "path": "backend/security.py",
+      "sha256": "913d871b10d45132b4d2e50f953d0f6ccb8cb4bfc9ea8e3aa26cbaf91b30ae15",
+      "bytes": 4313
+    },
+    {
+      "path": "database/schema_target.sql",
+      "sha256": "1b609ac4b2b3204e81601d605d09f521f25682fccdcda72741a0a921a9eb31b4",
+      "bytes": 13082
+    },
+    {
+      "path": "deploy/Dockerfile",
+      "sha256": "a4da28c12a916f1d6bcec9bf6cb0217d9fa5eb3734fb0f7d55a70c180f564a6b",
+      "bytes": 344
+    },
+    {
+      "path": "deploy/docker-compose.yml",
+      "sha256": "ea04f731c3f19a619453c098f744e7581cf63608ca3fb15badd40675f7d1e64c",
+      "bytes": 531
+    },
+    {
+      "path": "deploy/verify_release.py",
+      "sha256": "6e65394316b405e2fe584bd9953f65dec9d61886c3b4e7af5088e710ab12c5dd",
+      "bytes": 795
+    },
+    {
+      "path": "docs/API_HUONG_DAN.md",
+      "sha256": "07ae8b9a6446d2a4b2830a7cad69c24367730568717bae42e2bc59ed2481ec85",
+      "bytes": 3160
+    },
+    {
+      "path": "docs/API_RESOURCES_V96.md",
+      "sha256": "588b452a6de1cf3a10b01979fe5881e3ff64dc5d59ce8078858803b5a15d6ebb",
+      "bytes": 914
+    },
+    {
+      "path": "docs/BAO_CAO_KIEM_TOAN_V97.md",
+      "sha256": "af3c9d4f26fe4cb72dd174f5945bbbe72bd75c77ef7b88a21b6dd0f88a54ca4b",
+      "bytes": 2125
+    },
+    {
+      "path": "docs/CAU_TRUC_DATABASE_VA_QUAN_HE.md",
+      "sha256": "4c83a9e7b1acb894dc65d555ddfbefcfa81bb038dfe9f36d7f266adf558c8c25",
+      "bytes": 6558
+    },
+    {
+      "path": "docs/HUONG_DAN_TRIEN_KHAI_TUNG_BUOC.md",
+      "sha256": "c68ef25c9116f1fb52423c614a8176267ba4cd4fcf5e77b2fc6308e73941b174",
+      "bytes": 2117
+    },
+    {
+      "path": "docs/KE_TOAN_BAN_GIAO_V95.md",
+      "sha256": "76980986ccd95ddabda3825ab626acd922ff2af23396c291695b3806bbbbf6d6",
+      "bytes": 3238
+    },
+    {
+      "path": "docs/PHAM_VI_DA_CO_VA_CHUA_CO.md",
+      "sha256": "b414cb7171c334215209204d5dd94a56cfcbeff1b1a49ce2932897f665e8915b",
+      "bytes": 1258
+    },
+    {
+      "path": "docs/PHAN_BIET_DA_HOAN_THANH_VA_CAN_KY_THUAT.md",
+      "sha256": "8bce2193af30be38c2c476901453184f1f0c7c70a6a459adff06ebeeb853c65c",
+      "bytes": 1528
+    },
+    {
+      "path": "docs/THIET_BI_VA_BAO_MAT_V92.md",
+      "sha256": "6e96af71bc78c3ed055bc7b58e17a76f1b39760a2029a9a25ad5a873ab0925d5",
+      "bytes": 1483
+    },
+    {
+      "path": "docs/TICH_HOP_FRONTEND_DATABASE.md",
+      "sha256": "4298a60a48b255ca80d703d2ebf9a2cbefeb59fbb76e91511bc655f9f8f2e30a",
+      "bytes": 1227
+    },
+    {
+      "path": "docs/TU_DONG_NHAN_DIEN_VA_AI_AGENT.md",
+      "sha256": "dcf43fd7b6c8c94d2bb4a83fdb8e19ba9f6d25177cbb6730ac21f03f52fab8c0",
+      "bytes": 2758
+    },
+    {
+      "path": "public/app.html",
+      "sha256": "c64d8d19b40af4ea1d377d521d326b1ba337871adaa978d329b649d21533dbb7",
+      "bytes": 9407
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "7b3342d44550eb02c38a03642c1e520af339944c0c11f57f76804988e7cbb36b",
+      "bytes": 10729
+    },
+    {
+      "path": "public/legacy.html",
+      "sha256": "b1837e368028fad14d02c51a156d9498b41ffb7074542ca9a0fe3e049db13b32",
+      "bytes": 914
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "63d4bd0c297c673a38310fb9216701fb7772be8f6951e301a042a1e2d2caa72b",
+      "bytes": 108
+    },
+    {
+      "path": "tests/test_accounting_extended.py",
+      "sha256": "e76ccf9513153fd8a97a5e89396ecff27c1502820944dc4195c1cc09f5cf3aac",
+      "bytes": 2576
+    },
+    {
+      "path": "tests/test_api.py",
+      "sha256": "a2ba68ea594bd802c0a00c36b2d11d669e7b16ed415f8405338a1412d5588cb9",
+      "bytes": 2988
+    },
+    {
+      "path": "tests/test_compat.py",
+      "sha256": "724a527b51ec1f4c0d8fe34cea6f78fc66829b12354778986ca30816348f8a2a",
+      "bytes": 1530
+    },
+    {
+      "path": "tests/test_contract_v92.py",
+      "sha256": "40c4a7c2db410cd9d8e11c992aef47e20729b5142ccbdd25cda42efeaacf8fae",
+      "bytes": 762
+    },
+    {
+      "path": "tests/test_coverage.py",
+      "sha256": "cf0a1cc60a1cb868fcf677147e8b53bcfb0ba73fafabf0a759a9a633def72bce",
+      "bytes": 510
+    },
+    {
+      "path": "tests/test_devices_security_v92.py",
+      "sha256": "8b98622cf79ee57663d5beac92b1e2ddd81b627791bb457c013cd42fba8cfe85",
+      "bytes": 1299
+    },
+    {
+      "path": "tests/test_erp_http_regression_v97.py",
+      "sha256": "1f714040c701a4eed9e6ae65db36225a2884da495917a80e34be2ceea544a04d",
+      "bytes": 1684
+    },
+    {
+      "path": "tests/test_extra_integration.py",
+      "sha256": "ff58580fcbf45282115f4b3179fe6849e40fe3790c35be887354e32a1ab13deb",
+      "bytes": 800
+    },
+    {
+      "path": "tests/test_frontend_backend_contract.py",
+      "sha256": "62a93960d8b40b21f88ebd34611d388d1592b7f93ff2e6d5ddc231877b0e347c",
+      "bytes": 1076
+    },
+    {
+      "path": "tests/test_operations_v94.py",
+      "sha256": "b5bda5aa34b00a1550fdc8914f59681a90c32ef5566e5ddb52cd473fd18845b4",
+      "bytes": 1305
+    },
+    {
+      "path": "tests/test_release_bundle.py",
+      "sha256": "25eff98bab9c85fba0a8f229af8df7b3aa67300a964d22905cde1b21de118d7b",
+      "bytes": 449
+    },
+    {
+      "path": "tests/test_resources_v96.py",
+      "sha256": "6de7078d97bb091f182ec4808393b4b1737e8a586480ed375e921e6f353b52d8",
+      "bytes": 646
+    },
+    {
+      "path": "tests/test_security_v93.py",
+      "sha256": "1aa2f596f338938f4279f4402046a9833edeb7389d85a6cde571435d5d0b4005",
+      "bytes": 496
+    },
+    {
+      "path": "tests/test_v90_regression.py",
+      "sha256": "4035562a4e7d1b39f225824a0661bab2bc0540d9442e562608fff79a9931ae5f",
+      "bytes": 1185
+    },
+    {
+      "path": "tests/test_v91_features.py",
+      "sha256": "12b2ba920655ed5ea5f17c484dc4d6381e7dd40a59db43501d93001eef2be5d7",
+      "bytes": 2150
+    }
+  ]
+}

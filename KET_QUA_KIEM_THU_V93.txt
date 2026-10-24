@@ -1,0 +1,3 @@
+Chạy: SUNNY_ADMIN_PASSWORD=<mật khẩu kiểm thử> python -m pytest -q
+Kết quả: 28 passed in 4.19s
+Giới hạn: unit/integration tests không tương đương nghiệm thu thực địa, kiểm thử thâm nhập hoặc thử nghiệm giao thức PLC.
